@@ -1,0 +1,17 @@
+import os
+
+dir241 = r"C:\Users\Owner\Desktop\Project\DWGS\241_HUMN"
+dir245 = r"C:\Users\Owner\Desktop\Project\DWGS\245_LIBR"
+ext = '.DWG' # Select file delimiter
+dwg_HUMN = [i for i in os.listdir(dir241) if os.path.splitext(i)[1] == ext]  # Select only files with the ext extension
+dwg_LIBR = [i for i in os.listdir(dir245) if os.path.splitext(i)[1] == ext]
+bldgHUMN = ['241-01','241-02','241-03','241-04','241-2B']
+bldgLIBR = ['245-01','245-03','245-04','245-05','245-06','245-1B','245-2B','245-2M','245-3M','590-03','590-04','591-01','591-02']
+dictHUMN={}  #creates a dictionary of Humanities bldg with bldg nos/floors as keys and CAD drawings as values
+dictLIBR={}  #creates a dictionary of Library bldg with bldg nos/floors as keys and CAD drawings as values
+
+for file in range(len(dwg_HUMN)):
+    dictHUMN[bldgHUMN[file]]=dwg_HUMN[file]
+
+for file in range(len(dwg_LIBR)):
+    dictLIBR[bldgLIBR[file]]=dwg_LIBR[file]
